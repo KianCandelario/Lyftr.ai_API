@@ -77,7 +77,7 @@ app = FastAPI()
 # Enable CORS (Allows Next.js to make requests to FastAPI)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[os.environ.get("NEXT_PUBLIC_URL")],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
