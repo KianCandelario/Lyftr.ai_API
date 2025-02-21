@@ -83,6 +83,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def health_check():
+    return {"status": "running"}
+
+
 # Chatbot endpoint
 @app.post("/chatbot/response")
 async def chatbot_response(chat_request: ChatRequest):
